@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/tiendas_manga_peru/static/css/main.e6c13ad2.css",
-    "main.js": "/tiendas_manga_peru/static/js/main.b3f4babc.js",
+    "main.js": "/tiendas_manga_peru/static/js/main.49dbfa0d.js",
     "index.html": "/tiendas_manga_peru/index.html",
     "main.e6c13ad2.css.map": "/tiendas_manga_peru/static/css/main.e6c13ad2.css.map",
-    "main.b3f4babc.js.map": "/tiendas_manga_peru/static/js/main.b3f4babc.js.map"
+    "main.49dbfa0d.js.map": "/tiendas_manga_peru/static/js/main.49dbfa0d.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.b3f4babc.js"
+    "static/js/main.49dbfa0d.js"
   ]
 }
