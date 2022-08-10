@@ -6,9 +6,9 @@ function header() {
           <header class="py-2 bg-light border-bottom mb-4">
         <div class="container">
           <div class="text-center my-5">
-            <h1 class="fw-bolder">Welcome to Blog Home!</h1>
+            <h1 class="fw-bolder">Encuentra una tienda manga confiable cerca de tí!</h1>
             <p class="lead mb-0">
-              A Bootstrap 5 starter layout for your next blog homepage
+              Buscador de tiendas y grupos manga en Perú
             </p>
           </div>
         </div>
