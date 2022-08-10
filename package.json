@@ -1,6 +1,6 @@
 {
   "homepage": "http://gonzdn.github.io/tiendas_manga_peru",
-  "name": "manga-peru",
+  "name": "tiendas-manga-peru",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
