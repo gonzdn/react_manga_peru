@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-deploy/static/css/main.1ef3a49a.css",
-    "main.js": "/react-deploy/static/js/main.000586f0.js",
-    "index.html": "/react-deploy/index.html",
-    "main.1ef3a49a.css.map": "/react-deploy/static/css/main.1ef3a49a.css.map",
-    "main.000586f0.js.map": "/react-deploy/static/js/main.000586f0.js.map"
+    "main.css": "/react_manga_peru/static/css/main.1ef3a49a.css",
+    "main.js": "/react_manga_peru/static/js/main.000586f0.js",
+    "index.html": "/react_manga_peru/index.html",
+    "main.1ef3a49a.css.map": "/react_manga_peru/static/css/main.1ef3a49a.css.map",
+    "main.000586f0.js.map": "/react_manga_peru/static/js/main.000586f0.js.map"
   },
   "entrypoints": [
     "static/css/main.1ef3a49a.css",
