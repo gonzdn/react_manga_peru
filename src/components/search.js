@@ -64,12 +64,12 @@ function Search() {
       );
       setDistrictsByProvince(filteredDistricts);
       setProvinceId('15');
-      setDistrictId('1');
+      setDistrictId('101');
 
       //Cargo tiendas
       storeList.then((result) => {
         let filteredStores = result.filter(
-          (store) => store.id_ref == 1
+          (store) => store.id_ref == 101
         );
         setStoresByDistrict(filteredStores);
       })

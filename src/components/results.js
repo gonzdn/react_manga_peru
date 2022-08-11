@@ -6,8 +6,8 @@ function Results(props) {
     <>
       {props.stores.map((store) => {
         return (
-          <div key={store.id} className="col-lg-6">
-            <div className="card mb-4" style={{width: "18rem"}}>            
+          <div key={store.id} className="col-lg-4">
+            <div className="card mb-4" style={{width: "16rem"}}>            
               <Link to={`/storedetail/${ store.id_store }`}>
               <img
                         className="card-img-top img-fluid"
