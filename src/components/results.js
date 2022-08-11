@@ -7,13 +7,14 @@ function Results(props) {
       {props.stores.map((store) => {
         return (
           <div key={store.id} className="col-lg-6">
-            <div className="card mb-4">            
+            <div className="card mb-4" style={{width: "18rem"}}>            
               <Link to={`/storedetail/${ store.id_store }`}>
               <img
-                  className="card-img-top"
-                  src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg"
-                  alt="..."
-                />
+                        className="card-img-top img-fluid"
+                        src={`${process.env.PUBLIC_URL +'/images/'+ store.urlFoto}`}
+                        alt={`${store.nombre}`}
+                        loading="lazy"
+                      />
               </Link>
               <div className="card-body">
                 <h2 className="card-title h4">{store.nombre}</h2>

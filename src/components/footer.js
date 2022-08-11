@@ -6,7 +6,7 @@ function footer() {
           <footer class="py-5 bg-dark">
         <div class="container">
           <p class="m-0 text-center text-white">
-            Copyright &copy; Your Website 2022
+            Copyright &copy; Tiendas Manga en Perú 2022
           </p>
         </div>
       </footer>
