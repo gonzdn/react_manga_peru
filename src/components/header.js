@@ -8,7 +8,7 @@ function header() {
           <div className="text-center my-5">
             <h1 className="fw-bolder">Encuentra una tienda manga confiable cerca de tí!</h1>
             <p className="lead mb-0">
-              Buscador de tiendas y grupos manga en Perú
+              Buscador de tiendas manga en Perú
             </p>
           </div>
         </div>

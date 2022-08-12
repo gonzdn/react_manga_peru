@@ -29,11 +29,6 @@ function Navbar() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#!">
-                  Grupos Facebook
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#!">
                   Contactar
                 </a>
               </li>

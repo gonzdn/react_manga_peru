@@ -27,7 +27,7 @@ function StoreDetail() {
             <div className="row">
               <div className="card mb-4">
                 <div className="card-header">
-                  <h2 className="card-title h4">{store.nombre}</h2>
+                  <h4 className="card-title">{store.nombre}</h4>
                 </div>
                 <div className="card-body">
                   <div className="row">
@@ -40,7 +40,7 @@ function StoreDetail() {
                       />
                     </div>
                     <div className="col-lg-6">                      
-                        <span>{store.descripcion}</span>
+                        <span><b>{store.descripcion}</b></span>
                         <br></br>
                         <br></br>
                         <span>{store.direccion === "" ? "Tienda online" : "Dirección: "+store.direccion}</span>                     
@@ -90,7 +90,15 @@ function StoreDetail() {
                     <i className="bi bi-browser-chrome"></i> 
                     </div>
                     <div className="col-lg-10">
-                    {store.urlWeb === "" ? "Sin página web" : store.urlWeb}
+                    {store.urlWeb === "" ? "Sin página web" : 
+                    <a
+                    href={`${store.urlWeb}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {store.urlWeb}
+                  </a>                    
+                    }
                     </div>  
                   </div>
                 </div>
@@ -98,6 +106,7 @@ function StoreDetail() {
             
           </div>
         </div>
+        {store.urlGoogleMap && 
         <div className="row">
           <div className="col-lg-9">
             <div className="card mb-4">
@@ -119,7 +128,9 @@ function StoreDetail() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        }
+        
       </div>      
       <Footer/>
     </>
