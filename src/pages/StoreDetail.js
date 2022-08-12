@@ -54,12 +54,28 @@ function StoreDetail() {
             <div className="card mb-4">
               <div className="card-header">Contacto</div>
               <div className="card-body">
-                <ul style={{ listStyleType: "none" }}>
-                  <li>
-                    <i className="bi bi-whatsapp"></i> {store.numero_whatsapp === "" ? "No presenta número" : store.numero_whatsapp}
-                  </li>
-                  <li>
-                    <i className="bi bi-facebook"></i>{" "}
+                <div className="row">
+                  <div className="col-lg-2">
+                    <i className="bi bi-whatsapp"></i> 
+                  </div>
+                  <div className="col-lg-10">
+                  {store.numero_whatsapp === "" ? "No presenta número" 
+                    : <a href={`https://wa.me/51${store.numero_whatsapp}`} target="_blank">{store.numero_whatsapp}</a>}
+                  </div>
+                  </div>
+                  <div className="row">
+                  <div className="col-lg-2">
+                    <i className="bi bi-envelope"></i> 
+                    </div>
+                    <div className="col-lg-10">
+                    {store.correo === "" ? "No presenta email" : store.correo}
+                    </div>
+                  </div>
+                  <div className="row">
+                  <div className="col-lg-2">
+                    <i className="bi bi-facebook"></i>
+                    </div>
+                    <div className="col-lg-10">
                     <a
                       href={`${store.urlFacebook}`}
                       target="_blank"
@@ -67,13 +83,19 @@ function StoreDetail() {
                     >
                       Facebook
                     </a>
-                  </li>
-                  <li>
-                    <i className="bi bi-browser-chrome"></i> {store.urlWeb === "" ? "Sin página web" : store.urlWeb}
-                  </li>
-                </ul>
+                    </div>
+                  </div>
+                  <div className="row">
+                  <div className="col-lg-2">
+                    <i className="bi bi-browser-chrome"></i> 
+                    </div>
+                    <div className="col-lg-10">
+                    {store.urlWeb === "" ? "Sin página web" : store.urlWeb}
+                    </div>  
+                  </div>
+                </div>
               </div>
-            </div>
+            
           </div>
         </div>
         <div className="row">
@@ -98,7 +120,7 @@ function StoreDetail() {
             </div>
           </div>
         </div>
-      </div>
+      </div>      
       <Footer/>
     </>
   );

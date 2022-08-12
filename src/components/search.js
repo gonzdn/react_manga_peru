@@ -11,6 +11,7 @@ function Search() {
   const [storesByDistrict, setStoresByDistrict] = useState([]);
   const [provinceId, setProvinceId] = useState('');
   const [districtId, setDistrictId] = useState('');
+  const [search, setSearch] = useState('');
   const provincesRef = collection(db, "provincias");
   const districtsRef = collection(db, "distritos");
   const storesRef = collection(db, "tiendas");
@@ -19,9 +20,14 @@ function Search() {
     let filteredDistricts = districts.filter(
       (district) => district.id_ref == event.target.value
     );
+
+    let filteredStores = stores.filter(
+      (store) => store.id_provi == event.target.value
+    );
+    setStoresByDistrict(filteredStores);
+
     setDistrictsByProvince(filteredDistricts);
-    setProvinceId(event.target.value);
-    setStoresByDistrict([]);
+    setProvinceId(event.target.value);    
     setDistrictId(0);
   };
 
@@ -32,6 +38,14 @@ function Search() {
     setStoresByDistrict(filteredStores);
     setDistrictId(event.target.value);
   };
+
+  const handleSearchChange = (event) => {
+    let filteredStores = stores.filter(
+      (store) => store.nombre.toLowerCase().includes(event.target.value)
+    );
+    setStoresByDistrict(filteredStores);
+    setSearch(event.target.value);
+  }
 
   useEffect(() => {
     const getProvinces = async () => {
@@ -50,13 +64,15 @@ function Search() {
       const data = await getDocs(storesRef);
       const dataList = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
       setStores(dataList);
+      setStoresByDistrict(dataList);
       return dataList;
     };
 
     getProvinces();
-    const districtList = getDistricts();
-    const storeList = getStores();
+    getDistricts();
+    getStores();    
 
+    /*
     //Inicializo los selects
     districtList.then((result) => {
       let filteredDistricts = result.filter(
@@ -74,6 +90,7 @@ function Search() {
         setStoresByDistrict(filteredStores);
       })
     })
+    */
 
   }, []);
 
@@ -94,11 +111,13 @@ function Search() {
               <div className="card-body">
                 <div className="input-group">
                   <input
+                    value={search}
                     className="form-control"
                     type="text"
                     placeholder="Ingresa una palabra..."
                     aria-label="Ingresa una palabra..."
                     aria-describedby="button-search"
+                    onChange={handleSearchChange}                    
                   />
                 </div>
               </div>
