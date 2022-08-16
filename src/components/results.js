@@ -1,31 +1,49 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import StoreCard from "./storeCard";
 
 function Results(props) {
+  const [items, setItems] = useState([]);
+  const [hasMore, setHasMore] = useState(true);
+  const [currentOffset, setCurrentOffset] = useState(3);
+
+  const handleScroll = (e) => {
+    const { scrollTop, offsetHeight } = document.documentElement;
+const { innerHeight } = window;
+const bottomOfWindow = Math.round(scrollTop) + innerHeight === offsetHeight;
+    if (bottomOfWindow) {
+      fetchData();
+    }
+  };
+
+  /*const handleClick = (e) => {
+    fetchData();
+  };*/
+
+  useEffect(() => {
+    setItems(props.stores.slice(0, currentOffset));
+    window.addEventListener("scroll", handleScroll);
+  }, [props.stores]);
+
+  const fetchData = () => {
+    if (hasMore) {
+      if (currentOffset >= props.stores.length) {
+        setHasMore(false);
+        return;
+      }
+
+      let offset = currentOffset + 3;
+      setItems(props.stores.slice(0, offset));
+      setCurrentOffset(offset);
+      setHasMore(true);
+    }
+  };
+
   return (
     <>
-      {props.stores.map((store) => {
-        return (
-          <div key={store.id} className="col-12 col-md-6 col-lg-4">
-            <div className="card mb-4 animate__animated animate__fadeInUp">            
-              <Link to={`/storedetail/${ store.id_store }`}>
-              <img
-                        className="card-img-top img-fluid"
-                        src={`${process.env.PUBLIC_URL +'/images/'+ store.urlFoto}`}
-                        alt={`${store.nombre}`}
-                        loading="lazy"
-                      />
-              </Link>
-              <div className="card-body">
-                <h2 className="card-title h4">{store.nombre}</h2>
-                <Link to={`/storedetail/${ store.id_store }`} className="btn btn-primary">
-                  Ver tienda →
-                </Link>
-              </div>
-            </div>
-          </div>
-        );
+      {items.map((store) => {
+        return <StoreCard key={store.id} store={store} />;
       })}
+      {/* <button onClick={handleClick}>test</button> */}
     </>
   );
 }
