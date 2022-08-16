@@ -6,7 +6,7 @@ function Results(props) {
   const [storesTemp, setStoresTemp] = useState([]);
   const [items, setItems] = useState([]);
   const [hasMore, setHasMore] = useState(true);
-  const [currentOffset, setCurrentOffset] = useState(5);
+  const [currentOffset, setCurrentOffset] = useState(6);
 
   useEffect(() => {
     setStoresTemp(props.stores);
@@ -20,7 +20,7 @@ function Results(props) {
         return;
       }
 
-      let offset = currentOffset + 3;
+      let offset = currentOffset + 6;
       setItems(storesTemp.slice(0, offset));
       setCurrentOffset(offset);
       setHasMore(true);
@@ -34,20 +34,24 @@ function Results(props) {
           dataLength={items.length}
           next={fetchData}
           hasMore={hasMore}
-          loader={<h4>Cargando tiendas...</h4>}
+          loader={
+            <div class="d-flex justify-content-center">
+              <div class="spinner-grow text-dark" role="status">
+                <span class="visually-hidden">Cargando tiendas...</span>
+              </div>
+            </div>
+          }
           endMessage={
-            <p style={{ textAlign: 'center' }}>
-              <b>No se encontraron más tiendas.</b>
+            <p style={{ textAlign: "center" }}>
+              <b>No se encontraron más tiendas :(</b>
             </p>
           }
           className="row"
           style={{ overflow: "hidden" }}
         >
-
           {items.map((store) => {
-            return <StoreCard key={store.id} store={store} />
+            return <StoreCard key={store.id} store={store} />;
           })}
-
         </InfiniteScroll>
       </div>
     </div>
