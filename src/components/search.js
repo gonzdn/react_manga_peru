@@ -171,13 +171,12 @@ function Search() {
               </div>
             </div> */}
           </div>
-          <div className="col-lg-9">
-            <div className="row">
+          
+            
               <Results stores={storesByDistrict} />
-            </div>
+          
           </div>
-        </div>
-      </div>
+        </div>      
     </>
   );
 }
