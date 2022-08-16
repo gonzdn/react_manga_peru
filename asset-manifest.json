@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/tiendas_manga_peru/static/css/main.a3d22e54.css",
-    "main.js": "/tiendas_manga_peru/static/js/main.e058c49d.js",
+    "main.js": "/tiendas_manga_peru/static/js/main.7bb7f857.js",
     "static/media/bootstrap-icons.woff?": "/tiendas_manga_peru/static/media/bootstrap-icons.e559bf06bc84fd9525e6.woff",
     "static/media/bootstrap-icons.woff2?": "/tiendas_manga_peru/static/media/bootstrap-icons.ea98e12d2d58747f9fc5.woff2",
     "index.html": "/tiendas_manga_peru/index.html",
     "main.a3d22e54.css.map": "/tiendas_manga_peru/static/css/main.a3d22e54.css.map",
-    "main.e058c49d.js.map": "/tiendas_manga_peru/static/js/main.e058c49d.js.map"
+    "main.7bb7f857.js.map": "/tiendas_manga_peru/static/js/main.7bb7f857.js.map"
   },
   "entrypoints": [
     "static/css/main.a3d22e54.css",
-    "static/js/main.e058c49d.js"
+    "static/js/main.7bb7f857.js"
   ]
 }
