@@ -6,7 +6,8 @@ import {
   Routes,
   Route,
   useLocation,
-  Navigate
+  Navigate,
+  HashRouter 
 } from "react-router-dom";
 
 import './index.css';
@@ -23,15 +24,19 @@ const Wrapper = ({children}) => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-  <Wrapper>
-    <Routes>
-      <Route path="/tiendas_manga_peru" element={<Home />} />
-      {/* <Route path="/" element={<Home />} /> -- Solo en local*/}
-      <Route path="/:storedetail/:id" element={<StoreDetail />} />
-      {/* <Route path="/:storedetail/:id" element={<StoreDetail />} /> -- Solo en local*/}
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
-    </Wrapper>
-  </BrowserRouter>
+  // <BrowserRouter>
+  // <Wrapper>
+  //   <Routes>      
+  //     <Route path="/" element={<Home />} />
+  //     <Route path="/:storedetail/:id" element={<StoreDetail />} />
+  //     <Route path="*" element={<Navigate to="/" replace />} />
+  //   </Routes>
+  //   </Wrapper>
+  // </BrowserRouter>
+
+  <React.StrictMode>
+     <HashRouter>
+      <Home />
+     </HashRouter>
+   </React.StrictMode>
 );
