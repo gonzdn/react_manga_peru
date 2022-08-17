@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/header.css";
 
-function header() {
+function Header() {
+
+  useEffect(() => {
+    setTimeout(function () {
+      document.getElementsByClassName('carousel-control-next-icon')[0].click();
+    }, 5000);
+
+  }, [])
+
   return (
     <>
       <header className="bg-light border-bottom mb-4">
@@ -33,7 +41,7 @@ function header() {
             ></button>
           </div>
           <div className="carousel-inner">
-            <div className="carousel-item active" data-bs-interval="10000">
+            <div className="carousel-item active" data-bs-interval="15000">
               <img
                 src={`${process.env.PUBLIC_URL + "/images/header/header1.jpg"}`}
                 className="d-block w-100"
@@ -121,4 +129,4 @@ function header() {
   );
 }
 
-export default header;
+export default Header;
