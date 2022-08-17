@@ -5,7 +5,8 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  useLocation
+  useLocation,
+  Navigate
 } from "react-router-dom";
 
 import './index.css';
@@ -26,8 +27,8 @@ root.render(
   <Wrapper>
     <Routes>
       <Route path="/" element={<Home />} />        
-      <Route path="storedetail/:id" element={<StoreDetail />} />  
-      <Route path="*" element={<Home />} />            
+      <Route path="/:storedetail/:id" element={<StoreDetail />} />        
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
     </Wrapper>
   </BrowserRouter>

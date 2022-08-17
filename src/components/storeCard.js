@@ -13,6 +13,7 @@ function StoreCard({ store: { id_store, urlFoto, nombre } }) {
             src={`${process.env.PUBLIC_URL + '/images/' + urlFoto}`}
             alt={`${nombre}`}
             loading="lazy"
+            draggable="false"
           />
         </Link>
         <div className="card-body">
