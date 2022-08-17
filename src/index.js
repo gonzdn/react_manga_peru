@@ -27,7 +27,7 @@ root.render(
   <Wrapper>
     <Routes>
       <Route path="/" element={<Home />} />        
-      <Route path="/:storedetail/:id" element={<StoreDetail />} />        
+      <Route path="/tiendas_manga_peru/:storedetail/:id" element={<StoreDetail />} />        
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
     </Wrapper>
