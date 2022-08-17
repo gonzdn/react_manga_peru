@@ -28,7 +28,7 @@ root.render(
     <Routes>
       <Route path="/tiendas_manga_peru" element={<Home />} />
       {/* <Route path="/" element={<Home />} /> -- Solo en local*/}
-      <Route path="/tiendas_manga_peru/:storedetail/:id" element={<StoreDetail />} />
+      <Route path="/:storedetail/:id" element={<StoreDetail />} />
       {/* <Route path="/:storedetail/:id" element={<StoreDetail />} /> -- Solo en local*/}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
