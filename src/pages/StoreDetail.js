@@ -76,27 +76,27 @@ function StoreDetail() {
                 <div className="card-header">Contacto</div>
                 <div className="card-body">
                   <div className="row">
-                    <div className="col-lg-2">
+                    <div className="col-2 col-lg-2">
                       <i className="bi bi-whatsapp"></i>
                     </div>
-                    <div className="col-lg-10">
+                    <div className="col-10 col-lg-10">
                       {store.numero_whatsapp === "" ? "No presenta número"
                         : <a href={`https://wa.me/51${store.numero_whatsapp}`} target="_blank">{store.numero_whatsapp}</a>}
                     </div>
                   </div>
                   <div className="row">
-                    <div className="col-lg-2">
+                    <div className="col-2 col-lg-2">
                       <i className="bi bi-envelope"></i>
                     </div>
-                    <div className="col-lg-10">
+                    <div className="col-10 col-lg-10">
                       {store.correo === "" ? "No presenta email" : store.correo}
                     </div>
                   </div>
                   <div className="row">
-                    <div className="col-lg-2">
+                    <div className="col-2 col-lg-2">
                       <i className="bi bi-facebook"></i>
                     </div>
-                    <div className="col-lg-10">
+                    <div className="col-10 col-lg-10">
                       <a
                         href={`${store.urlFacebook}`}
                         target="_blank"
@@ -107,10 +107,10 @@ function StoreDetail() {
                     </div>
                   </div>
                   <div className="row">
-                    <div className="col-lg-2">
+                    <div className="col-2 col-lg-2">
                       <i className="bi bi-browser-chrome"></i>
                     </div>
-                    <div className="col-lg-10">
+                    <div className="col-10 col-lg-10">
                       {store.urlWeb === "" ? "Sin página web" :
                         <a
                           href={`${store.urlWeb}`}
@@ -124,7 +124,6 @@ function StoreDetail() {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
           {store.urlGoogleMap &&
