@@ -22,21 +22,21 @@ function header() {
   <div className="carousel-inner">
     <div className="carousel-item active" data-bs-interval="10000">
       <img src={`${process.env.PUBLIC_URL + '/images/header/header1.jpg'}`} className="d-block w-100" style={{height: '50vh'}}  alt="tiendas manga"/>
-      <div className="carousel-caption d-none d-md-block" style={{top: '50%', transform: 'translateY(-50%)'}}>
+      <div className="carousel-caption" style={{top: '50%', transform: 'translateY(-50%)'}}>
         <h1 className="fw-bolder headerText">Encuentra una tienda manga confiable cerca de tí!</h1>
         <p className="fw-bolder lead mb-0 headerSubText">Buscador de tiendas manga en Perú</p>
       </div>
     </div>
     <div className="carousel-item" data-bs-interval="2000">
     <img src={`${process.env.PUBLIC_URL + '/images/header/header2.jpg'}`} className="d-block w-100" style={{height: '50vh'}}  alt="tiendas manga"/>
-      <div className="carousel-caption d-none d-md-block headerText" style={{top: '50%', transform: 'translateY(-50%)'}}>
+      <div className="carousel-caption" style={{top: '50%', transform: 'translateY(-50%)'}}>
       <h1 className="fw-bolder headerText">Encuentra una tienda manga confiable cerca de tí!</h1>
       <p className="fw-bolder lead mb-0 headerSubText">Buscador de tiendas manga en Perú</p>
       </div>
     </div>
     <div className="carousel-item">
     <img src={`${process.env.PUBLIC_URL + '/images/header/header3.jpg'}`} className="d-block w-100" style={{height: '50vh'}}  alt="tiendas manga"/>
-      <div className="carousel-caption d-none d-md-block headerText" style={{top: '50%', transform: 'translateY(-50%)'}}>
+      <div className="carousel-caption" style={{top: '50%', transform: 'translateY(-50%)'}}>
       <h1 className="fw-bolder headerText">Encuentra una tienda manga confiable cerca de tí!</h1>
       <p className="fw-bolder lead mb-0 headerSubText">Buscador de tiendas manga en Perú</p>
       </div>
