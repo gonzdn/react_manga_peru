@@ -4,7 +4,7 @@ import "../styles/header.css";
 function header() {
   return (
     <>
-      <header className="pb-2 bg-light border-bottom mb-4">
+      <header className="bg-light border-bottom mb-4">
         <div
           id="carouselExampleDark"
           className="carousel carousel-dark slide"
