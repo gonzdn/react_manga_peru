@@ -33,10 +33,14 @@ root.render(
   //   </Routes>
   //   </Wrapper>
   // </BrowserRouter>
-
-  <React.StrictMode>
-     <HashRouter>
-      <Home />
-     </HashRouter>
-   </React.StrictMode>
+     
+  <HashRouter>
+  <Wrapper>
+    <Routes>      
+      <Route path="/" element={<Home />} />
+      <Route path="/:storedetail/:id" element={<StoreDetail />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+    </Wrapper>
+  </HashRouter>
 );
