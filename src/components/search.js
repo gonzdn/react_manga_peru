@@ -19,11 +19,11 @@ function Search() {
   const handleProvinceChange = (event) => {
     let filteredDistricts = districts.filter(
       (district) => district.id_ref == event.target.value
-    );
+    ).sort(() => Math.random() - 0.5);
 
     let filteredStores = stores.filter(
       (store) => store.id_provi == event.target.value
-    );
+    ).sort(() => Math.random() - 0.5);
     setStoresByDistrict(filteredStores);
 
     setDistrictsByProvince(filteredDistricts);
@@ -33,8 +33,8 @@ function Search() {
 
   const handleDistrictChange = (event) => {
     let filteredStores = stores.filter(
-      (store) => store.id_ref == event.target.value
-    );
+      (store) => store.id_ref == event.target.value && store.id_provi == provinceId
+    ).sort(() => Math.random() - 0.5);
     setStoresByDistrict(filteredStores);
     setDistrictId(event.target.value);
   };
@@ -42,7 +42,7 @@ function Search() {
   const handleSearchChange = (event) => {
     let filteredStores = stores.filter(
       (store) => store.nombre.toLowerCase().includes(event.target.value)
-    );
+    ).sort(() => Math.random() - 0.5);
     setStoresByDistrict(filteredStores);
     setSearch(event.target.value);
   }
@@ -62,7 +62,7 @@ function Search() {
 
     const getStores = async () => {
       const data = await getDocs(storesRef);
-      const dataList = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+      const dataList = data.docs.map((doc) => ({ ...doc.data(), id: doc.id })).sort(() => Math.random() - 0.5);
       setStores(dataList);
       setStoresByDistrict(dataList);
       return dataList;

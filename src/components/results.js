@@ -41,11 +41,6 @@ function Results(props) {
               </div>
             </div>
           }
-          endMessage={
-            <p style={{ textAlign: "center" }}>
-              <b>No se encontraron más tiendas :(</b>
-            </p>
-          }
           className="row"
           style={{ overflow: "hidden" }}
         >
