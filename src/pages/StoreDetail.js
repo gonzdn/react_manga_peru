@@ -35,13 +35,13 @@ function StoreDetail() {
       </div>)}
       {!loading && (
         <div className="container py-3">
-                  <div className="row">
-          <div className="col-lg-12 py-2">            
-            <Link to={'/'} className="btn btn-warning">
-            <i class="bi bi-arrow-left"></i> Regresar
-          </Link>            
+          <div className="row">
+            <div className="col-lg-12 py-2">
+              <Link to={'/'} className="btn btn-warning">
+                <i class="bi bi-arrow-left"></i> Regresar
+              </Link>
+            </div>
           </div>
-        </div>
           <div className="row">
             <div className="col-lg-9">
               <div className="row">
@@ -75,43 +75,78 @@ function StoreDetail() {
               <div className="card mb-4">
                 <div className="card-header">Contacto</div>
                 <div className="card-body">
-                  <div className="row">
-                    <div className="col-2 col-lg-2">
-                      <i className="bi bi-whatsapp"></i>
+                  {store.telefono &&
+                    (<div className="row">
+                      <div className="col-2 col-lg-2">
+                        <i className="bi bi-telephone"></i>
+                      </div>
+                      <div className="col-10 col-lg-10">
+                        <a href={`https://wa.me/51${store.telefono}`} target="_blank">{store.telefono}</a>
+                      </div>
                     </div>
-                    <div className="col-10 col-lg-10">
-                      {store.numero_whatsapp === "" ? "No presenta número"
-                        : <a href={`https://wa.me/51${store.numero_whatsapp}`} target="_blank">{store.numero_whatsapp}</a>}
+                    )
+                  }
+                  {store.numero_whatsapp &&
+                    (<div className="row">
+                      <div className="col-2 col-lg-2">
+                        <i className="bi bi-whatsapp"></i>
+                      </div>
+                      <div className="col-10 col-lg-10">
+                        <a href={`https://wa.me/51${store.numero_whatsapp}`} target="_blank">{store.numero_whatsapp}</a>
+                      </div>
                     </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-2 col-lg-2">
-                      <i className="bi bi-envelope"></i>
+                    )
+                  }
+                  {store.correo &&
+                    (<div className="row">
+                      <div className="col-2 col-lg-2">
+                        <i className="bi bi-envelope"></i>
+                      </div>
+                      <div className="col-10 col-lg-10">
+                        {store.correo}
+                      </div>
                     </div>
-                    <div className="col-10 col-lg-10">
-                      {store.correo === "" ? "No presenta email" : store.correo}
+                    )
+                  }
+                  {store.urlFacebook && (
+                    <div className="row">
+                      <div className="col-2 col-lg-2">
+                        <i className="bi bi-facebook"></i>
+                      </div>
+                      <div className="col-10 col-lg-10">
+                        <a
+                          href={`${store.urlFacebook}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Facebook
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-2 col-lg-2">
-                      <i className="bi bi-facebook"></i>
+                  )}
+                  {store.urlInstagram && (
+                    <div className="row">
+                      <div className="col-2 col-lg-2">
+                        <i className="bi bi-instagram"></i>
+                      </div>
+                      <div className="col-10 col-lg-10">
+                        <a
+                          href={`${store.urlInstagram}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Instagram
+                        </a>
+                      </div>
                     </div>
-                    <div className="col-10 col-lg-10">
-                      <a
-                        href={`${store.urlFacebook}`}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Facebook
-                      </a>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-2 col-lg-2">
-                      <i className="bi bi-browser-chrome"></i>
-                    </div>
-                    <div className="col-10 col-lg-10">
-                      {store.urlWeb === "" ? "Sin página web" :
+                  )
+                  }
+                  {store.urlWeb && (
+                    <div className="row">
+                      <div className="col-2 col-lg-2">
+                        <i className="bi bi-browser-chrome"></i>
+                      </div>
+                      <div className="col-10 col-lg-10">
                         <a
                           href={`${store.urlWeb}`}
                           target="_blank"
@@ -119,9 +154,41 @@ function StoreDetail() {
                         >
                           {store.urlWeb}
                         </a>
-                      }
+                      </div>
                     </div>
-                  </div>
+                  )}
+                  {store.urlTelegram && (
+                    <div className="row">
+                      <div className="col-2 col-lg-2">
+                        <i className="bi bi-telegram"></i>
+                      </div>
+                      <div className="col-10 col-lg-10">
+                        <a
+                          href={`${store.urlTelegram}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Telegram
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                  {store.urlDiscord && (
+                    <div className="row">
+                      <div className="col-2 col-lg-2">
+                        <i className="bi bi-discord"></i>
+                      </div>
+                      <div className="col-10 col-lg-10">
+                        <a
+                          href={`${store.urlDiscord}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Discord
+                        </a>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
