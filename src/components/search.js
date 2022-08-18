@@ -19,10 +19,10 @@ function Search() {
   const handleProvinceChange = (event) => {
     let filteredDistricts = districts.filter(
       (district) => district.id_ref == event.target.value
-    ).sort(() => Math.random() - 0.5);
+    );
 
     let filteredStores = stores.filter(
-      (store) => store.id_provi == event.target.value
+      (store) => store.id_provi == event.target.value && store.estado == true
     ).sort(() => Math.random() - 0.5);
     setStoresByDistrict(filteredStores);
 
@@ -33,7 +33,7 @@ function Search() {
 
   const handleDistrictChange = (event) => {
     let filteredStores = stores.filter(
-      (store) => store.id_ref == event.target.value && store.id_provi == provinceId
+      (store) => store.id_ref == event.target.value && store.id_provi == provinceId && store.estado == true
     ).sort(() => Math.random() - 0.5);
     setStoresByDistrict(filteredStores);
     setDistrictId(event.target.value);
@@ -41,7 +41,7 @@ function Search() {
 
   const handleSearchChange = (event) => {
     let filteredStores = stores.filter(
-      (store) => store.nombre.toLowerCase().includes(event.target.value)
+      (store) => store.nombre.toLowerCase().includes(event.target.value) && store.estado == true
     ).sort(() => Math.random() - 0.5);
     setStoresByDistrict(filteredStores);
     setSearch(event.target.value);
