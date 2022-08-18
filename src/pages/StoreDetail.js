@@ -81,7 +81,7 @@ function StoreDetail() {
                         <i className="bi bi-telephone"></i>
                       </div>
                       <div className="col-10 col-lg-10">
-                        <a href={`https://wa.me/51${store.telefono}`} target="_blank">{store.telefono}</a>
+                        {store.telefono}
                       </div>
                     </div>
                     )
