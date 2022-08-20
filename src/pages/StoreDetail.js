@@ -64,7 +64,7 @@ function StoreDetail() {
                         <span><b>{store.descripcion}</b></span>
                         <br></br>
                         <br></br>
-                        <span>{store.direccion === "" ? "Tienda online" : "Dirección: " + store.direccion}</span>
+                        {store.direccion && <span><b>Dirección</b> {store.direccion}</span>}
                       </div>
                     </div>
                   </div>
